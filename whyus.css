@@ -1,0 +1,46 @@
+/* genral  */
+* {
+    font-family: "Merriweather", serif;
+}
+
+p {
+    line-height: 1.7;
+}
+
+.btn-outline-primary {
+    border-radius: 50px;
+    border-color: #e68387;
+    color: black;
+    padding: 13px 40px;
+}
+
+.btn-outline-primary:hover {
+    background-color: #e68387;
+    border-color: #e68387;
+    color: white;
+}
+
+
+.content-padding {
+    padding: 100px 200px;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* why us section  */
+
+.why-us-card {
+    border-radius: 25px;
+    border-color: #f4f4f6;
+    border-width: 3px !important;
+    padding: 20px 10px;
+}
+
+.why-us-card .card-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}

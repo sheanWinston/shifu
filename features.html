@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="features.css">
+    <style>
+        /* Add some basic styling for the crypto prices */
+        .crypto-prices {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .crypto-price {
+            background-color: #f8f9fa; /* Light gray background */
+            border: 1px solid #dee2e6; /* Light gray border */
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px; /* Rounded corners */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <div class="title">
+            <h4>FEATURES</h4>
+            <h1>Our Features & Services</h1>
+        </div>
+
+        <div class="p-5 bg-danger box">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card service-card service-card-1">
+                        <div class="card-body">
+                            <img src="images/1.jpg" alt="" class="img-fluid">
+                            <h3 class="my-3">Communications</h3>
+                            <p>Pretium lectus quam id leo in vitae turpis.
+                                Mattis pellentesque id nibh tortor id.</p>
+                            <button class="btn btn-special">MORE</button>
+                        </div>
+                    </div>
+                    <h3>Hello world</h3>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="card-body">
+                            <img src="images/2.jpg" alt="" class="img-fluid">
+                            <h3 class="my-3">Inspired Design</h3>
+                            <p>Pretium lectus quam id leo in vitae turpis.
+                                Mattis pellentesque id nibh tortor id.</p>
+                            <button class="btn btn-special">MORE</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="card-body">
+                            <img src="images/3.jpg" alt="" class="img-fluid">
+                            <h3 class="my-3">Happy Customers</h3>
+                            <p>Pretium lectus quam id leo in vitae turpis.
+                                Mattis pellentesque id nibh tortor id.</p>
+                            <button class="btn btn-special">MORE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container crypto-prices">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="crypto-price" id="bitcoin-price">
+                    Loading Bitcoin price...
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="crypto-price" id="ethereum-price">
+                    Loading Ethereum price...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum&vs_currencies=usd')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('bitcoin-price').textContent = `Bitcoin Price: $${data.bitcoin.usd}`;
+                document.getElementById('ethereum-price').textContent = `Ethereum Price: $${data.ethereum.usd}`;
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+
+</body>
+
+</html>
